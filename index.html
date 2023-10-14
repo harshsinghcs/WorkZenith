@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="styles.css"> <!-- Add custom CSS if needed -->
 </head>
 <body>
-    <div class="container mx-auto p-4">
+    <div class="w-full container mx-auto p-4">
         <header class="w-full flex justify-between items-center">
-            <div>WorkZenith</div>
+            <div class="text-xl font-bold"><span class="text-blue-500">Work</span>Zenith Dashboard</div>
             <div class="flex justify-between mb-8 space-x-4">
-                <a href="#" class="text-black hover:text-blue-500 transition-all duration-500">Home</a>
-                <a href="#" class="text-black hover:text-blue-500 transition-all duration-500">About</a>
-                <a href="#" class="text-black hover:text-blue-500 transition-all duration-500">Dashboard</a>
-                <a href="#" class="text-black hover:text-blue-500 transition-all duration-500">Contact Us</a>
+                <a href="#" class="font-bold text-black hover:text-blue-500 transition-all duration-500">Home</a>
+                <a href="#" class="font-bold text-black hover:text-blue-500 transition-all duration-500">About</a>
+                <a href="#" class="font-bold text-black hover:text-blue-500 transition-all duration-500">Dashboard</a>
+                <a href="#" class="font-bold text-black hover:text-blue-500 transition-all duration-500">Contact Us</a>
             </div>
         </header>
 
@@ -25,9 +25,9 @@
                 <div class="text-center">
                     <h2 class="text-xl mb-4">Pomodoro Timer</h2>
                     <div id="timer" class="text-4xl mb-4">25:00</div>
-                    <button onclick="startTimer()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2">Start</button>
-                    <button onclick="pauseTimer()" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 mr-2">Pause</button>
-                    <button onclick="resetTimer()" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4">Reset</button>
+                    <button onclick="startTimer()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2 rounded-md"><i class="fa-solid fa-play"></i></button>
+                    <button onclick="pauseTimer()" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 mr-2 rounded-md"><i class="fa-solid fa-pause"></i></button>
+                    <button onclick="resetTimer()" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-md"><i class="fa-solid fa-arrows-rotate"></i></button>
                 </div>
             </div>
 
@@ -37,8 +37,8 @@
                 <div>
                     <h2 class="text-xl mb-4">To-Do List</h2>
                     <div class="mb-4">
-                        <input type="text" id="taskInput" class="border p-2" placeholder="Enter a task">
-                        <button onclick="addTask()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ml-2">Add Task</button>
+                        <input type="text" id="taskInput" class="border p-2 rounded-md" placeholder="Enter a task">
+                        <button onclick="addTask()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ml-2 rounded-md">Add Task</button>
                     </div>
                     <div id="primaryTask" class="mb-4">
                         <!-- Primary task will be displayed here -->
@@ -54,5 +54,6 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/0ddc63a6de.js" crossorigin="anonymous"></script>
 </body>
 </html>
