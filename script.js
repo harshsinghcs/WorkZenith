@@ -7,6 +7,10 @@ let timer;
 let minutes = 25;
 let seconds = 0;
 let isPaused = true;
+let pomodoroCount = 0;
+let isBreak = false;
+let shortBreakDuration = 5; // Duration of short break in minutes
+let longBreakDuration = 15; // Duration of long break in minutes
 
 function startTimer() {
     isPaused = false;
@@ -16,6 +20,7 @@ function startTimer() {
 function pauseTimer() {
     isPaused = true;
     clearInterval(timer);
+    updateDisplay(); // Update the timer display to show the paused time
 }
 
 function resetTimer() {
@@ -28,7 +33,20 @@ function resetTimer() {
 
 function updateTimer() {
     if (minutes === 0 && seconds === 0) {
-        clearInterval(timer);
+        if (isBreak) {
+            // Handle the end of a break (short or long)
+            isBreak = false; // Reset the break flag
+        } else {
+            if (pomodoroCount >= 4) {
+                // It's time for a long break
+                minutes = longBreakDuration;
+            } else {
+                // It's time for a short break
+                minutes = shortBreakDuration;
+            }
+            isBreak = true; // Set the break flag
+            pomodoroCount++; // Increment the pomodoro count
+        }
         // Add a notification or alert here when the timer finishes
     } else {
         if (seconds === 0) {
@@ -44,6 +62,26 @@ function updateTimer() {
 function updateDisplay() {
     const timerDisplay = document.getElementById('timer');
     timerDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+
+//ShortBreak
+function setShortBreak() {
+    isPaused = true;
+    clearInterval(timer);
+    minutes = shortBreakDuration;
+    seconds = 0;
+    isBreak = true; // Set the break flag
+    updateDisplay();
+}
+
+//longBreak
+function setLongBreak() {
+    isPaused = true;
+    clearInterval(timer);
+    minutes = longBreakDuration;
+    seconds = 0;
+    isBreak = true; // Set the break flag
+    updateDisplay();
 }
 
 // Initialize the display
@@ -162,6 +200,10 @@ function unassignPrimaryTask() {
         updateTodoList();
     }
 }
+
+
+
+
 
 // Website Blocker
 // Add JavaScript code for website blocker here
