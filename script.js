@@ -210,3 +210,18 @@ function unassignPrimaryTask() {
 
 // Spotify Music Player
 // Add JavaScript code for Spotify music player here
+
+const musicLink = document.getElementById('musicLink');
+const playButton = document.getElementById('playButton');
+const music = document.getElementById('music');
+
+playButton.addEventListener('click', () => {
+    const link = musicLink.value.trim();
+
+    if (link) {
+        music.src = link;
+        music.play();
+    } else {
+        alert('Please enter a valid music link.');
+    }
+});
