@@ -14,7 +14,7 @@ const Header = () => {
           Home
         </Link>
         <Link
-          href={"/dashboard"}
+          href={"https://harshsinghcs.github.io/WorkZenith/"}
           className="text-lg hover:text-[#ff8913] transition-all duration-700"
         >
           Dashboard

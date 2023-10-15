@@ -13,7 +13,7 @@ export default function Home() {
       <section className="container mx-auto text-center py-16">
         {/* <h2 className="text-3xl font-bold mb-8">How It Works</h2> */}
         {/* Step-by-step guide with illustrations */}
-        <Link href="/dashboard" className="bg-orange-500 text-white py-2 px-6 rounded-full text-lg hover:text-black">Get Started</Link>
+        <Link href="https://harshsinghcs.github.io/WorkZenith/" className="bg-orange-500 text-white py-2 px-6 rounded-full text-lg hover:text-black">Get Started</Link>
       </section>
     </div>
   )
