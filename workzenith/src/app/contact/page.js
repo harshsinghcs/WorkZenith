@@ -57,7 +57,7 @@ const Page = () => {
         <Link href="#" className="mx-2">
           <BsFacebook />
         </Link>
-        <Link href="#" className="mx-2">
+        <Link href="https://discord.gg/ydyMQvBZfj" className="mx-2">
           <BsDiscord />
         </Link>
       </div>
